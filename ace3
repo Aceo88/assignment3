@@ -10,6 +10,8 @@ from dash.dependencies import Input, Output
 data_url = "https://github.com/Aceo88/assignment3/blob/main/Tesla_stock_Price.csv"
 df = pd.DataFrame(data, columns=["Date", "Price", "Open", "High", "Low", "Volume", "Chg%"])
 
+server.app=server
+
 # Sort the DataFrame by Date and select the top 20 data points
 df["Date"] = pd.to_datetime(df["Date"])
 df = df.sort_values(by="Date").tail(20)
